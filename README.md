@@ -49,6 +49,10 @@ Para construir el contenedor ```docker build -t getting_started .```
 
 ```docker run -dp 3000:3000 getting-started```
 
+Para mantener los cambios de la app:
+
+```docker run -d -v /Users/erickCuevas/ejemplo-docker/app/etc:/etc/todos -p 3000:3000 getting-started```
+
 
 
 

@@ -92,7 +92,8 @@ Se recomienda usar un container como base de datos y otro como app, y hacer que 
 -v todo-mysql-data:/var/lib/mysql 
 -e MYSQL_ROOT_PASSWORD=secret 
 -e MYSQL_DATABASE=todos 
-mysql:5.7```
+mysql:5.7
+```
 
 `-v /var/lib/mysql` es donde se encuentran la base de datos de mysql. 
 

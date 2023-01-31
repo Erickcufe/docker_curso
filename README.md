@@ -114,6 +114,7 @@ Y ahora se pueden usar codigos de mysql como por ejemplo: `show databases`
 -e MYSQL_PASSWORD=secret 
 -e MYSQL_DB=todos 
 getting-started:v2
+```
 
 ```docker ps```
 

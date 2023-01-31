@@ -53,8 +53,12 @@ Para mantener los cambios de la app:
 
 ```docker run -d -v /Users/erickCuevas/ejemplo-docker/app/etc:/etc/todos -p 3000:3000 getting-started```
 
+Al hacer esto se genera un archivo en `etc/todo.db` que funciona como base de datos. Es es util para generar apps que nos permitan guardar la informacion de los usuarios. 
 
+```nvim src/static/js/app.js```
 
+```docker run -d -v /Users/erickCuevas/ejemplo-docker/app/etc:ect/todos -p 3000:3000 -v /Users/erickCuevas/ejemplo-docker/app/src:/app/src getting started```
 
+Al hacer esto vamos sobreescribiendo nuestra app dependiendo de los cambios que busquemos hacer. 
 
 

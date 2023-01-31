@@ -79,4 +79,47 @@ La imagen se puede compartir en dockerHub de manera gratuita siempre y cuando se
 
 A partir de ahora toda persona puede hacer ```docker pull``` de la imagen
 
+## Corriendo varios containers a la vez
+
+Se recomienda usar un container como base de datos y otro como app, y hacer que ambos interactuen. 
+
+```cd multicontainer```
+
+```docker network create todo-app```
+
+```docker run -d \
+--network todo-app --network-alias mysql \
+-v todo-mysql-data:/var/lib/mysql \
+-e MYSQL_ROOT_PASSWORD=secret \
+-e MYSQL_DATABASE=todos \
+mysql:5.7```
+
+`-v /var/lib/mysql` es donde se encuentran la base de datos de mysql. 
+
+Es buena practica ir a ver la documentacion de cada imagen para configurar correctamente las variables de entorno con `-e`.
+
+```docker exec -it ID_image mysql -p```
+
+Y ahora se pueden usar codigos de mysql como por ejemplo: `show databases` 
+
+```docker run -it --network todo-app nicolaka/netshoot```
+
+```dig mysql```
+
+```docker run -dp 3000:3000 \
+--network todo-app \
+-e MYSQL_HOST=mysql \
+-e MYSQL_USER=root \
+-e MYSQL_PASSWORD=secret \
+-e MYSQL_DB=todos \
+getting-started:v2´´´
+
+´´´docker ps´´´
+
+´´´docker stop ID_container´´´
+
+´´´docker run -dp 3000:3000 --network todo-app -e MYSQL_HOST=mysql -e MYSQL_USER=root -e MYSQL_PASSWORD=secret -e MYSQL_DB=todos getting-started:v2´´´
+
+
+
 

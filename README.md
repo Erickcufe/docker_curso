@@ -18,9 +18,9 @@
 
 ```docker logs -f```
 
-``docker exec``` ejecuta un comando dentro de un contenedor que ya está corriendo. 
+```docker exec``` ejecuta un comando dentro de un contenedor que ya está corriendo. 
 
-``docker exec -it fsa09f7a79bd sh``` para simular una terminal interactiva. 
+```docker exec -it fsa09f7a79bd sh``` para simular una terminal interactiva. 
 
 ```docker run```ejecuta un contenedor a partir de una imagen. 
 

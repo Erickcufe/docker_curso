@@ -59,6 +59,24 @@ Al hacer esto se genera un archivo en `etc/todo.db` que funciona como base de da
 
 ```docker run -d -v /Users/erickCuevas/ejemplo-docker/app/etc:ect/todos -p 3000:3000 -v /Users/erickCuevas/ejemplo-docker/app/src:/app/src getting started```
 
-Al hacer esto vamos sobreescribiendo nuestra app dependiendo de los cambios que busquemos hacer. 
+Al hacer esto vamos sobreescribiendo nuestra app dependiendo de los cambios que busquemos hacer. Una vez que terminemos de hacer cambios se vuelve a construir la imagen.
+
+```docker build -t getting-started:v2```
+
+La imagen se puede compartir en dockerHub de manera gratuita siempre y cuando sea libre lo que se comparte. 
+
+## Para subir la imagen a DockerHub
+
+```docker login``
+
+```docker images | head```
+
+```docker tag ID_de_la_imagen erick1394/getting-started:v2```
+
+```docker images```
+
+```docker push erick1394/getting-started:v2```
+
+A partir de ahora toda persona puede hacer ```docker pull``` de la imagen
 
 

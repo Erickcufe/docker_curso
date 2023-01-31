@@ -67,7 +67,7 @@ La imagen se puede compartir en dockerHub de manera gratuita siempre y cuando se
 
 ## Para subir la imagen a DockerHub
 
-```docker login``
+```docker login```
 
 ```docker images | head```
 

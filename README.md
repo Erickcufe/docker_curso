@@ -38,6 +38,19 @@ Se recomiendo empezar usando una imagen que tenga todo lo que necesito.
 FROM node:12.22.1-alphine3.11
 
 WORKDIR /app
-COPY ..
+COPY . .
+RUN yarn install --production
 
 CMD["node", "/app/src/index.js"]
+
+``` 
+
+Para construir el contenedor ```docker build -t getting_started .```
+
+```docker run getting-startd```
+
+
+
+
+
+

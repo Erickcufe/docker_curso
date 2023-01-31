@@ -116,9 +116,9 @@ getting-started:v2
 
 ```docker ps```
 
-´´´docker stop ID_container´´´
+```docker stop ID_container```
 
-´´´docker run -dp 3000:3000 --network todo-app -e MYSQL_HOST=mysql -e MYSQL_USER=root -e MYSQL_PASSWORD=secret -e MYSQL_DB=todos getting-started:v2´´´
+```docker run -dp 3000:3000 --network todo-app -e MYSQL_HOST=mysql -e MYSQL_USER=root -e MYSQL_PASSWORD=secret -e MYSQL_DB=todos getting-started:v2
 
 
 

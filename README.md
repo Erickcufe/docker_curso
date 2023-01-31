@@ -151,6 +151,17 @@ services:
     environment:
     MYSQL_ROOT_PASSWORD: secret
     MYSQL_DATABASE: todos
+```
+
+```docker-compose up -d```
+
+Este comando up se puede ejecutar varias veces para levantar la app en caso de que no se haya configurado aun mysql y la app no pueda abrirse por eso. 
+
+```docker ps```
+
+Para ver errores en la conexion se puede usar ```docker log ID_CONTAINER```
+
+Para cerrar la app ```docker-compose down```
 
 
 

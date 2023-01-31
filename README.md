@@ -87,11 +87,11 @@ Se recomienda usar un container como base de datos y otro como app, y hacer que 
 
 ```docker network create todo-app```
 
-```docker run -d \
---network todo-app --network-alias mysql \
--v todo-mysql-data:/var/lib/mysql \
--e MYSQL_ROOT_PASSWORD=secret \
--e MYSQL_DATABASE=todos \
+```docker run -d 
+--network todo-app --network-alias mysql 
+-v todo-mysql-data:/var/lib/mysql 
+-e MYSQL_ROOT_PASSWORD=secret 
+-e MYSQL_DATABASE=todos 
 mysql:5.7```
 
 `-v /var/lib/mysql` es donde se encuentran la base de datos de mysql. 
@@ -106,12 +106,12 @@ Y ahora se pueden usar codigos de mysql como por ejemplo: `show databases`
 
 ```dig mysql```
 
-```docker run -dp 3000:3000 \
---network todo-app \
--e MYSQL_HOST=mysql \
--e MYSQL_USER=root \
--e MYSQL_PASSWORD=secret \
--e MYSQL_DB=todos \
+```docker run -dp 3000:3000 
+--network todo-app 
+-e MYSQL_HOST=mysql 
+-e MYSQL_USER=root 
+-e MYSQL_PASSWORD=secret 
+-e MYSQL_DB=todos 
 getting-started:v2
 
 ```docker ps```

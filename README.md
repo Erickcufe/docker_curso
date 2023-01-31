@@ -47,7 +47,7 @@ CMD["node", "/app/src/index.js"]
 
 Para construir el contenedor ```docker build -t getting_started .```
 
-```docker run getting-startd```
+```docker run -dp 3000:3000 getting-started```
 
 
 

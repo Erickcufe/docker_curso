@@ -123,5 +123,34 @@ getting-started:v2
 ```docker run -dp 3000:3000 --network todo-app -e MYSQL_HOST=mysql -e MYSQL_USER=root -e MYSQL_PASSWORD=secret -e MYSQL_DB=todos getting-started:v2```
 
 
+## Docker compose
+
+```nvim docker-compose.yaml```
+
+El archivo `.yaml` se ve de la siguiente manera:
+
+```
+version: "3.7"
+
+services:
+
+  app:
+    image: pablokbs/getting-started:v2
+    ports:
+      - 3000:3000
+    environment:
+      MYSQL_HOST: mysql
+      MYSQL_USER: root
+      MYSQL_PASSWORD: secret
+      MYSQL_DB: todos
+      
+  mysql:
+    image: mysql:5.7
+    volumes:
+    - ./todos-mysql-data:/var/lib/mysql
+    environment:
+    MYSQL_ROOT_PASSWORD: secret
+    MYSQL_DATABASE: todos
+
 
 

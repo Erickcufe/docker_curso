@@ -28,3 +28,16 @@
 
 ```docker run -d nginx```para correr una imagen en background. 
 
+## Escribiendo un dockerfile
+
+```vim Dockerfile```
+
+Se recomiendo empezar usando una imagen que tenga todo lo que necesito. 
+
+```
+FROM node:12.22.1-alphine3.11
+
+WORKDIR /app
+COPY ..
+
+CMD["node", "/app/src/index.js"]
